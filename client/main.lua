@@ -16,12 +16,7 @@ local blipSY
 local Player
 
 if GetFrameWork() == 'ESX' then
-Citizen.CreateThread(function()
-    while ESX == nil do
-        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-        Citizen.Wait(0)
-    end
-end)
+    ESX = exports['es_extended']:getSharedObject()
 elseif GetFrameWork() == 'QBCORE' then
     QBCore = exports['qb-core']:GetCoreObject()
 end
